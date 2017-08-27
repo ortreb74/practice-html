@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
                       "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:svg="http://www.w3.org/2000/svg">
     <head>
       <title></title>
       <link rel="stylesheet" type = "text/css" href = "css/schema.css"/>
@@ -15,15 +16,18 @@
 			</ul>
 		</div>
 		<div>
+
 			<p><a href = "http://fr.learnlayout.com/position.html">http://fr.learnlayout.com/position.html</a></p>
 		</div>
 		<div>
 			<p><a href = "http://fr.learnlayout.com/inline-block.html">http://fr.learnlayout.com/inline-block.html</a></p>			
 		</div>
         <div class = "widget">
-          <div class = "svg-list">cercle</div>
-          <div class = "svg-list">XML</div>
-          <div class = "svg-list">flèche</div>          
+          <div class = "svg-list"><svg:svg><svg:text>cercle</svg:text></svg:svg></div>
+		  <div class = "svg-list"><svg:svg><svg:polygon fill="transparent" stroke="black" points="0 0 25 25"/></svg:svg></div>
+          <div class = "svg-list"><svg:text>XML</svg:text></div>
+		  <div class = "svg-list"><svg:svg><svg:polygon transform="translate(50 50)" fill="transparent" stroke="black" points="43 25 0 50 -43 25 -43 -25 0 -50 43 -25"/></svg:svg></div>
+          <div class = "svg-list"><svg:text>flèche</svg:text></div>   
         </div>
 		<div>
 			<ul>
