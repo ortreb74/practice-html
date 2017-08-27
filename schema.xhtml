@@ -6,6 +6,7 @@
     <head>
       <title></title>
       <link rel="stylesheet" type = "text/css" href = "css/schema.css"/>
+	  <script type="text/javascript" src="js/click.js"/>
     </head>
     <body>
 		<div>
@@ -26,7 +27,7 @@
           <div class = "svg-list"><svg:svg><svg:text x="0" y="35" font-family="Verdana" font-size="35">cercle</svg:text></svg:svg></div>
 		  <div class = "svg-list"><svg:svg><svg:polygon fill="transparent" stroke="black" points="0 0 25 25"/></svg:svg></div>
           <div class = "svg-list"><svg:text>XML</svg:text></div>
-		  <div class = "svg-list"><svg:svg><svg:polygon transform="translate(50 50)" fill="transparent" stroke="black" points="43 25 0 50 -43 25 -43 -25 0 -50 43 -25"/></svg:svg></div>
+		  <div class = "svg-list" id = "hexa"><svg:svg><svg:polygon onclick="doRectClick();" transform="translate(50 50)" fill="transparent" stroke="black" points="43 25 0 50 -43 25 -43 -25 0 -50 43 -25"/></svg:svg></div>
           <div class = "svg-list"><svg:text>flèche</svg:text></div>   
         </div>
 		<div>
