@@ -21,3 +21,36 @@
   width: 40%;  
 }
 
+/* div round border : */
+
+.line {
+/* https://www.alsacreations.com/astuce/lire/1432-display-inline-block-espaces-indesirables.html */
+  display: table;
+}
+
+.horizontal-separator {
+  display: inline-block;
+  width : 60px;  
+}
+
+.horizontal-connector {
+  display: inline-block;
+  width : 40px;
+  height: 20px;
+}
+
+.rounded-box {
+  width: 80px;
+  padding: 10px;
+  border: 2px solid #000;
+  border-radius: 10px;
+  text-align : center;
+  background-color:khaki;
+  display: inline-block;
+}
+
+.vertical-separator {
+  width : 100px;
+  height: 20px;
+  
+}

@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+                      "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:svg="http://www.w3.org/2000/svg">
+  <head>
+    <title></title>
+    <link href="css/schema.css" rel="stylesheet" type="text/css" />
+    <script src="js/click.js" type="text/javascript"></script>
+  </head>
+  <body>
+    <h1>La racine </h1>
+      <div class="line">      
+        <div class="rounded-box">
+          <span>ela</span>
+        </div>
+      </div>
+      <div class="vertical-separator">
+        <svg:svg height="20">
+          <svg:line stroke="black" x1="50" x2="50" y1="0" y2="20"></svg:line>
+        </svg:svg>
+      </div>
+      <div class="line">
+        <div class="rounded-box">
+          <span>bin</span>
+        </div>      
+        <div class="horizontal-connector">
+          <svg:svg height="16" width="40">
+            <svg:line stroke="black" x1="0" x2="40" y1="13" y2="13"></svg:line>
+          </svg:svg>
+        </div>
+        <div class="rounded-box">
+          <span>trt</span>
+        </div>
+        <div class="horizontal-connector">
+          <svg:svg height="16" width="40">
+            <svg:line stroke="black" x1="0" x2="40" y1="13" y2="13"></svg:line>
+          </svg:svg>
+        </div>      
+        <div class="rounded-box">
+          <span>cd-rom</span>
+        </div>
+        <div class="horizontal-separator"/>
+        <div class="rounded-box">
+          <span>trace</span>
+        </div>    
+      </div>
+      <h1>Les répertoires de premier niveau</h1>
+      <p>Le répertoire bin contient les programmes. Principalement les programmes en shell.</p>
+      <p>Le répertoire trt est hybride, il contient des programmes par produit. On y retrouve les programmes balises (source et compilés).</p>
+      <p>Le répertoire cd-rom contient les données.</p>
+      <p>Le répertoire trace contient des fichiers journaux produits par les traitements.</p>
+      <h1>Le répertoire des données</h1>
+    <div class="line">      
+      <div class="rounded-box">
+        <span>cd-rom</span>
+      </div>
+    </div>
+    <div class="vertical-separator">
+      <svg:svg height="20">
+        <svg:line stroke="black" x1="50" x2="50" y1="0" y2="20"></svg:line>
+      </svg:svg>
+    </div>
+    <div class="line">
+      <div class="rounded-box">
+        <span>datacomm</span>
+      </div>      
+      <div class="horizontal-connector">
+        <svg:svg height="16" width="40">
+          <svg:line stroke="black" x1="0" x2="40" y1="13" y2="13"></svg:line>
+        </svg:svg>
+      </div>
+      <div class="rounded-box">
+        <span>dp00</span>
+      </div>
+      <div class="horizontal-connector">
+        <svg:svg height="16" width="40">
+          <svg:line stroke="black" x1="0" x2="40" y1="13" y2="13"></svg:line>
+        </svg:svg>
+      </div>      
+      <div class="rounded-box">
+        <span>dp15</span>
+      </div>
+      <div class="horizontal-connector">
+        <svg:svg height="16" width="40">
+          <svg:line stroke="black" x1="0" x2="40" y1="13" y2="13"></svg:line>
+        </svg:svg>
+      </div>      
+      <div class="rounded-box">
+        <span>gp20</span>
+      </div>    
+      <div class="horizontal-connector">
+        <svg:svg height="16" width="40">
+          <svg:line stroke="black" x1="0" x2="40" y1="13" y2="13"></svg:line>
+        </svg:svg>
+      </div>      
+      <div class="rounded-box">
+        <span>gb74</span>
+      </div>
+      <div class="horizontal-connector">
+        <svg:svg height="16" width="40">
+          <svg:line stroke="black" x1="0" x2="40" y1="13" y2="13"></svg:line>
+        </svg:svg>
+      </div>     
+      <div class="rounded-box">
+        <span>hulk</span>
+      </div>    
+    </div>
+    <p>Le répertoire cdrom est le répertoire source des données. Sur le schéma ci dessous j'ai représenté 6 sous répertoires de cd-rom. Mais cale mérite explication</p>
+    <ol>
+      <li>Il y a de fait bien plus de sous répertoire dans cd-rom que ceux représentés.</li>
+      <li>dp00 dp15 sont une selection de produit parmi une liste bien plus large ; de même gp20 à gbp75.</li>
+      <li>On a ainsi 3 niveaux de données : datacomm est la source, dpxx (ou gpxx) sont les données organisées par produit, hulk est le répertoire des données au format attendu côté front</li>
+      <li>Il n'y a pas 3 niveaux de données, mais en fait 4. Entre le niveau produit et hulk, il y a un niveau intermédiaire qui est le format du précédent front (on peut parler de Jouve). On retrouvre ce format à l'intérieur des répertoires produit, dans le répertoire liv</li>
+    </ol>
+    <h1>La chaîne de traitement</h1>
+    <table>
+      <tr>
+        <td>datacomm</td>  
+      </tr>
+      <tr>
+        <td></td>
+        <td>const-cd</td>
+        <td>
+          <ul>
+            <li>regroupement des documents (études, synthèses, textes, par produit)</li>                      
+          </ul>          
+        </td>
+      </tr>
+      <tr>
+        <td>dpxx gbxx...</td>
+        <td></td>
+        <td>le répértoire des données organisées par produit</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>elsliv</td>
+        <td>
+            <ul>
+              <li>changement de dtd</li>
+              <li>ce changement est même double</li>
+              <li>d'autres traitements</li>
+            </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>dpxx gbxx... / liv</td>
+        <td></td>
+        <td>les données organisées par produit dans un format homogène</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>hulkliv</td>
+        <td>
+          <ul>
+            <li>création des données au format Hulk : UC, UR, URF</li>
+          </ul>
+        </td>
+      </tr>  
+      <tr>
+        <td>hulk</td>
+      </tr>      
+    </table>
+    <h1>Les programmes</h1>
+    <h2>I. const_cd</h2>
+    <p>ls /usr/local/ela/bin | grep const</p>
+    <div class="line">
+      <div class="rounded-box">
+        <span>usr</span>
+      </div>      
+      <div class="horizontal-connector">
+        <svg:svg height="16" width="40">
+          <svg:line stroke="black" x1="0" x2="40" y1="13" y2="13"></svg:line>
+        </svg:svg>
+      </div>
+      <div class="rounded-box">
+        <span>local</span>
+      </div>
+      <div class="horizontal-connector">
+        <svg:svg height="16" width="40">
+          <svg:line stroke="black" x1="0" x2="40" y1="13" y2="13"></svg:line>
+        </svg:svg>
+      </div>      
+      <div class="rounded-box">
+        <span>ela</span>
+      </div>
+      <div class="horizontal-connector">
+        <svg:svg height="16" width="40">
+          <svg:line stroke="black" x1="0" x2="40" y1="13" y2="13"></svg:line>
+        </svg:svg>
+      </div>      
+      <div class="rounded-box">
+        <span>bin</span>
+      </div>     
+      <div class="horizontal-connector">
+        <svg:svg height="16" width="40">
+          <svg:line stroke="black" x1="0" x2="40" y1="13" y2="13"></svg:line>
+        </svg:svg>
+      </div>      
+      <div class="rounded-box">
+        <span>const_cd</span>
+      </div>      
+      
+    </div>
+    <p>Il s'agit d'un programme écrit en shell (tcsh) qui copie les données depuis la source (datacomm) vers la cible (un répertoire qui porte le nom du produit)</p>
+    <p>Ce programme n'existe que sous sa forme principale : la production</p>
+    <p>Sa structure est un gros bloc conditionnel (case ou choose).</p>
+    <p>Le programme fait 907 lignes.</p>
+    <h1>Source d'information</h1>
+    <p>dp15.env</p>
+    <p>env | grep ELA | grep cd-rom</p>
+    <p>env | grep ELA | grep -v cd-rom</p>
+    <p>hulk.env</p>
+    <p>env | grep ELA | grep hulk</p>
+    </body>
+</html>
