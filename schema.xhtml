@@ -145,7 +145,19 @@
 					</svg:svg>
 				</div>
 			  </div>			  
-		  </div>			
+		  </div>	
+			<h1>Le code</h1>
+			<p>poser un @id sur l'attribut et une balise onclick</p>
+			<p>&lt;svg:circle id = "circle7" onclick="jsClick(this.id);"</p>
+			<p>le js</p>
+			<p>function jsClick(clickedId){</p>
+			<p>	var myrect = document.getElementById(clickedId);</p>
+			<p>	var r = Math.floor(Math.random() * 255);</p>
+			<p>	var g = Math.floor(Math.random() * 255);</p>
+			<p>	var b = Math.floor(Math.random() * 255);</p>
+			<p>	myrect.style.fill = 'rgb(' + r + ', ' + g + ' , ' + b + ')'; </p>
+}
+			
 		
     </body>
 </html>

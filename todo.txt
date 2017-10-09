@@ -1,0 +1,7 @@
+git init
+git add .
+git commit -m "version minimaliste"
+https://github.com/ortreb74/outline-capslist
+j'ai un problème de clef ssh
+
+je renommmerais bien le projet en backlog
