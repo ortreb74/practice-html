@@ -3,11 +3,7 @@ var xmlDeclaration = '<?xml version="1.0" encoding="UTF-8"?>';
 var headerAttributes = { "xmlns": "http://maven.apache.org/POM/4.0.0",
 				         "xmlns:xsi" : "http://www.w3.org/2001/XMLSchema-instance",
 				         "xsi:schemaLocation" : "http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" 
-					}
-				
-
-   
-  
+					}		
 
 function doRectClick(){
   var myrect = document.getElementById('hexa');
@@ -37,7 +33,8 @@ function transformExcelToEflPom(clickedId) {
 	
 	stringToPaste += openElement("project", headerAttributes);	
 	stringToPaste += addSimpleElement("modelVersion" , "4.0.0");	
-	stringToPaste += toXmlString(jsonData);	
+	stringToPaste += mavenCoordinatesToXml(jsonData);	
+	stringToPaste += parentDependencyToXml(jsonData["version-parent"]);	
 	stringToPaste += closeElement("project");
 	
 	copyToClipboard(stringToPaste);		
@@ -47,13 +44,34 @@ function transformExcelToEflPom(clickedId) {
 function interpretAsEflPomEntry(inputString) {
 	var vector = input.textContent.split("\n");	
 
-	return {"artifactId" : vector[1], "groupId" : vector[2], "version" : vector[3]};
+	return {
+		"mavenCoordinatesToXml" : {
+				"artifactId" : vector[1].replace(/ /g,''), 
+				"groupId" : vector[2].replace(/ /g,''), 
+				"version" : vector[3].replace(/ /g,''), 
+		},	
+		"version-parent" : vector[5].replace(/ /g,'')
+	};
 }
 
 function toXmlString(jsonData) {
 	var result = "";
 	
 	for (var prop in jsonData) {
+		result += "<" + prop + ">";
+		result += jsonData[prop];
+		result += "</" + prop + ">";
+	}
+	
+	return result;
+}
+
+function mavenCoordinatesToXml(jsonData) {
+	var result = "";
+	
+	var mavenCoordinates = jsonData["mavenCoordinates"];
+	
+	for (var prop in mavenCoordinates) {
 		result += "<" + prop + ">";
 		result += jsonData[prop];
 		result += "</" + prop + ">";
@@ -69,12 +87,12 @@ function openElement(elementName, attributes) {
 	
 	var start = true;
 	
-	for (var prop in attributes) {		
+	for (var prop in attributes) {
+		if (!start) result += " ";
 		result += prop;		
 		result += '="';
 		result += attributes[prop];		
 		result += '"';
-		if (!start) result += " ";
 		start = false;
 	}
 	
